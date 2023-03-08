@@ -390,7 +390,7 @@ export class MotionBlurPass extends Pass {
 			uniforms.prevProjectionMatrix.value.copy( projMat );
 			uniforms.prevModelViewMatrix.value.multiplyMatrices( invMat, data.matrixWorld );
 
-			renderer.renderBufferDirect( camera, null, mesh.geometry, material, mesh, null );
+			renderer.renderBufferDirect( camera, this.scene, mesh.geometry, material, mesh, null );
 
 			if ( saveState ) {
 
