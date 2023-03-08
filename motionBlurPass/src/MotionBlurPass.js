@@ -43,7 +43,7 @@ for ( let i = 0, l = 1; i < l; i ++ ) {
 	for ( let j = 0, l2 = bin.length; j < l2; j ++ ) {
 
 		const value = 255 * ( bin[ j ] / maxValue );
-		data[ j * 3 + i ] = value;
+		data[ j * 4 + i ] = value;
 
 	}
 
