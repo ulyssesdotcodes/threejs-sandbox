@@ -69,7 +69,7 @@ export class RendererState {
 
 			scene.overrideMaterial = this.overrideMaterial;
 			scene.background = this.background;
-			scene.autoUpdate = this.autoUpdate;
+			scene.matrixWorldAutoUpdate = this.autoUpdate;
 
 		}
 
