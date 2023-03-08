@@ -163,7 +163,7 @@ export class MotionBlurPass extends Pass {
 
 		// TODO: This is getting called just to set 'currentRenderState' in the renderer
 		// NOTE -- why do we need this?
-		renderer.compile( scene, camera );
+		//renderer.compile( scene, camera );
 		this._ensurePrevCameraTransform();
 
 		switch ( debug.display ) {
@@ -390,7 +390,7 @@ export class MotionBlurPass extends Pass {
 			uniforms.prevProjectionMatrix.value.copy( projMat );
 			uniforms.prevModelViewMatrix.value.multiplyMatrices( invMat, data.matrixWorld );
 
-			renderer.renderBufferDirect( camera, this.scene, mesh.geometry, material, mesh, null );
+			renderer.render(this.scene, camera);
 
 			if ( saveState ) {
 
