@@ -8,7 +8,7 @@ import {
 	Color,
 	WebGLRenderTarget,
 	LinearFilter,
-	RGBFormat,
+	RGBAFormat,
 	HalfFloatType,
 	Matrix4,
 	DataTexture,
@@ -51,7 +51,7 @@ for ( let i = 0, l = 1; i < l; i ++ ) {
 }
 
 // TODO: Why won't RedFormat work here?
-const blueNoiseTex = new DataTexture( data, generator.size, generator.size, RGBFormat );
+const blueNoiseTex = new DataTexture( data, generator.size, generator.size, RGBAFormat );
 blueNoiseTex.wrapS = RepeatWrapping;
 blueNoiseTex.wrapT = RepeatWrapping;
 blueNoiseTex.minFilter = LinearFilter;
