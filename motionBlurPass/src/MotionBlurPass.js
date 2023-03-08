@@ -8,7 +8,6 @@ import {
 	Color,
 	WebGLRenderTarget,
 	LinearFilter,
-	RGBAFormat,
 	HalfFloatType,
 	Matrix4,
 	DataTexture,
