@@ -396,11 +396,11 @@ export class MotionBlurPass extends Pass {
 			mesh.material = material;
 			
 			const prevBackground = this.scene.background;
-			scene.background = blackColor;
+			this.scene.background = blackColor;
 
 			renderer.render(this.scene, camera);
 			mesh.material = prevMat;
-			scene.background = prevBackground;
+			this.scene.background = prevBackground;
 
 			
 			if ( saveState ) {
