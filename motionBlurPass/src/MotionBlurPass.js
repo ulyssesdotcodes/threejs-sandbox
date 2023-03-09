@@ -389,9 +389,14 @@ export class MotionBlurPass extends Pass {
 			const invMat = renderCameraBlur ? this._prevCamWorldInverse : camera.matrixWorldInverse;
 			uniforms.prevProjectionMatrix.value.copy( projMat );
 			uniforms.prevModelViewMatrix.value.multiplyMatrices( invMat, data.matrixWorld );
+			
+			const prevMat = mesh.material;
+			mesh.material = material;
 
 			renderer.render(this.scene, camera);
+			mesh.material = prevMat;
 
+			
 			if ( saveState ) {
 
 				this._saveCurrentObjectState( mesh );
