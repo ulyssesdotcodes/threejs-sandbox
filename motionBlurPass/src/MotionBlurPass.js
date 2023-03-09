@@ -55,6 +55,8 @@ blueNoiseTex.wrapS = RepeatWrapping;
 blueNoiseTex.wrapT = RepeatWrapping;
 blueNoiseTex.minFilter = LinearFilter;
 
+const blackColor = new THREE.Color(0x000000);
+
 export class MotionBlurPass extends Pass {
 
 	get enabled() {
@@ -392,9 +394,13 @@ export class MotionBlurPass extends Pass {
 			
 			const prevMat = mesh.material;
 			mesh.material = material;
+			
+			const prevBackground = this.scene.background;
+			scene.background = blackColor;
 
 			renderer.render(this.scene, camera);
 			mesh.material = prevMat;
+			scene.background = prevBackground;
 
 			
 			if ( saveState ) {
